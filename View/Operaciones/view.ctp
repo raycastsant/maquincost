@@ -1,0 +1,161 @@
+<div class="operaciones view">
+<h2><?php  echo __('Operacione'); ?></h2>
+	<dl>
+		<dt><?php echo __('Id'); ?></dt>
+		<dd>
+			<?php echo h($operacione['Operacione']['id']); ?>
+			&nbsp;
+		</dd>
+		<dt><?php echo __('Nombre'); ?></dt>
+		<dd>
+			<?php echo h($operacione['Operacione']['nombre']); ?>
+			&nbsp;
+		</dd>
+	</dl>
+</div>
+<div class="actions">
+	<h3><?php echo __('Actions'); ?></h3>
+	<ul>
+		<li><?php echo $this->Html->link(__('Edit Operacione'), array('action' => 'edit', $operacione['Operacione']['id'])); ?> </li>
+		<li><?php echo $this->Form->postLink(__('Delete Operacione'), array('action' => 'delete', $operacione['Operacione']['id']), null, __('Are you sure you want to delete # %s?', $operacione['Operacione']['id'])); ?> </li>
+		<li><?php echo $this->Html->link(__('List Operaciones'), array('action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Operacione'), array('action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Ctregistros'), array('controller' => 'ctregistros', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Ctregistro'), array('controller' => 'ctregistros', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Elementocortanteoperaciones'), array('controller' => 'elementocortanteoperaciones', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Elementocortanteoperacione'), array('controller' => 'elementocortanteoperaciones', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Maquinasoperaciones'), array('controller' => 'maquinasoperaciones', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Maquinasoperacione'), array('controller' => 'maquinasoperaciones', 'action' => 'add')); ?> </li>
+	</ul>
+</div>
+<div class="related">
+	<h3><?php echo __('Related Ctregistros'); ?></h3>
+	<?php if (!empty($operacione['Ctregistro'])): ?>
+	<table cellpadding = "0" cellspacing = "0">
+	<tr>
+		<th><?php echo __('Id'); ?></th>
+		<th><?php echo __('Cartastecnologica Id'); ?></th>
+		<th><?php echo __('Operacione Id'); ?></th>
+		<th><?php echo __('Tipooperacione Id'); ?></th>
+		<th><?php echo __('Elementoscortante Id'); ?></th>
+		<th><?php echo __('Instrumentosauxiliare Id'); ?></th>
+		<th><?php echo __('Instrumentosmedicion Id'); ?></th>
+		<th><?php echo __('No Orden Operacion'); ?></th>
+		<th><?php echo __('Diametro Ini'); ?></th>
+		<th><?php echo __('Diametro Fin'); ?></th>
+		<th><?php echo __('Longitud Diametro'); ?></th>
+		<th><?php echo __('Longitud'); ?></th>
+		<th><?php echo __('Prof Corte'); ?></th>
+		<th><?php echo __('Cantidad Pasadas'); ?></th>
+		<th><?php echo __('Avance'); ?></th>
+		<th><?php echo __('Velocidad'); ?></th>
+		<th><?php echo __('Revoluciones'); ?></th>
+		<th><?php echo __('Tiempo Corte'); ?></th>
+		<th><?php echo __('Tiempo Auxiliar'); ?></th>
+		<th class="actions"><?php echo __('Actions'); ?></th>
+	</tr>
+	<?php
+		$i = 0;
+		foreach ($operacione['Ctregistro'] as $ctregistro): ?>
+		<tr>
+			<td><?php echo $ctregistro['id']; ?></td>
+			<td><?php echo $ctregistro['cartastecnologica_id']; ?></td>
+			<td><?php echo $ctregistro['operacione_id']; ?></td>
+			<td><?php echo $ctregistro['tipooperacione_id']; ?></td>
+			<td><?php echo $ctregistro['elementoscortante_id']; ?></td>
+			<td><?php echo $ctregistro['instrumentosauxiliare_id']; ?></td>
+			<td><?php echo $ctregistro['instrumentosmedicion_id']; ?></td>
+			<td><?php echo $ctregistro['no_orden_operacion']; ?></td>
+			<td><?php echo $ctregistro['diametro_ini']; ?></td>
+			<td><?php echo $ctregistro['diametro_fin']; ?></td>
+			<td><?php echo $ctregistro['longitud_diametro']; ?></td>
+			<td><?php echo $ctregistro['longitud']; ?></td>
+			<td><?php echo $ctregistro['prof_corte']; ?></td>
+			<td><?php echo $ctregistro['cantidad_pasadas']; ?></td>
+			<td><?php echo $ctregistro['avance']; ?></td>
+			<td><?php echo $ctregistro['velocidad']; ?></td>
+			<td><?php echo $ctregistro['revoluciones']; ?></td>
+			<td><?php echo $ctregistro['tiempo_corte']; ?></td>
+			<td><?php echo $ctregistro['tiempo_auxiliar']; ?></td>
+			<td class="actions">
+				<?php echo $this->Html->link(__('View'), array('controller' => 'ctregistros', 'action' => 'view', $ctregistro['id'])); ?>
+				<?php echo $this->Html->link(__('Edit'), array('controller' => 'ctregistros', 'action' => 'edit', $ctregistro['id'])); ?>
+				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'ctregistros', 'action' => 'delete', $ctregistro['id']), null, __('Are you sure you want to delete # %s?', $ctregistro['id'])); ?>
+			</td>
+		</tr>
+	<?php endforeach; ?>
+	</table>
+<?php endif; ?>
+
+	<div class="actions">
+		<ul>
+			<li><?php echo $this->Html->link(__('New Ctregistro'), array('controller' => 'ctregistros', 'action' => 'add')); ?> </li>
+		</ul>
+	</div>
+</div>
+<div class="related">
+	<h3><?php echo __('Related Elementocortanteoperaciones'); ?></h3>
+	<?php if (!empty($operacione['Elementocortanteoperacione'])): ?>
+	<table cellpadding = "0" cellspacing = "0">
+	<tr>
+		<th><?php echo __('Id'); ?></th>
+		<th><?php echo __('Operacione Id'); ?></th>
+		<th><?php echo __('Elementoscortante Id'); ?></th>
+		<th class="actions"><?php echo __('Actions'); ?></th>
+	</tr>
+	<?php
+		$i = 0;
+		foreach ($operacione['Elementocortanteoperacione'] as $elementocortanteoperacione): ?>
+		<tr>
+			<td><?php echo $elementocortanteoperacione['id']; ?></td>
+			<td><?php echo $elementocortanteoperacione['operacione_id']; ?></td>
+			<td><?php echo $elementocortanteoperacione['elementoscortante_id']; ?></td>
+			<td class="actions">
+				<?php echo $this->Html->link(__('View'), array('controller' => 'elementocortanteoperaciones', 'action' => 'view', $elementocortanteoperacione['id'])); ?>
+				<?php echo $this->Html->link(__('Edit'), array('controller' => 'elementocortanteoperaciones', 'action' => 'edit', $elementocortanteoperacione['id'])); ?>
+				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'elementocortanteoperaciones', 'action' => 'delete', $elementocortanteoperacione['id']), null, __('Are you sure you want to delete # %s?', $elementocortanteoperacione['id'])); ?>
+			</td>
+		</tr>
+	<?php endforeach; ?>
+	</table>
+<?php endif; ?>
+
+	<div class="actions">
+		<ul>
+			<li><?php echo $this->Html->link(__('New Elementocortanteoperacione'), array('controller' => 'elementocortanteoperaciones', 'action' => 'add')); ?> </li>
+		</ul>
+	</div>
+</div>
+<div class="related">
+	<h3><?php echo __('Related Maquinasoperaciones'); ?></h3>
+	<?php if (!empty($operacione['Maquinasoperacione'])): ?>
+	<table cellpadding = "0" cellspacing = "0">
+	<tr>
+		<th><?php echo __('Id'); ?></th>
+		<th><?php echo __('Maquina Id'); ?></th>
+		<th><?php echo __('Operacione Id'); ?></th>
+		<th class="actions"><?php echo __('Actions'); ?></th>
+	</tr>
+	<?php
+		$i = 0;
+		foreach ($operacione['Maquinasoperacione'] as $maquinasoperacione): ?>
+		<tr>
+			<td><?php echo $maquinasoperacione['id']; ?></td>
+			<td><?php echo $maquinasoperacione['maquina_id']; ?></td>
+			<td><?php echo $maquinasoperacione['operacione_id']; ?></td>
+			<td class="actions">
+				<?php echo $this->Html->link(__('View'), array('controller' => 'maquinasoperaciones', 'action' => 'view', $maquinasoperacione['id'])); ?>
+				<?php echo $this->Html->link(__('Edit'), array('controller' => 'maquinasoperaciones', 'action' => 'edit', $maquinasoperacione['id'])); ?>
+				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'maquinasoperaciones', 'action' => 'delete', $maquinasoperacione['id']), null, __('Are you sure you want to delete # %s?', $maquinasoperacione['id'])); ?>
+			</td>
+		</tr>
+	<?php endforeach; ?>
+	</table>
+<?php endif; ?>
+
+	<div class="actions">
+		<ul>
+			<li><?php echo $this->Html->link(__('New Maquinasoperacione'), array('controller' => 'maquinasoperaciones', 'action' => 'add')); ?> </li>
+		</ul>
+	</div>
+</div>
